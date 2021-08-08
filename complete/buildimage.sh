@@ -4,7 +4,7 @@
 TAG_NAME=$1
 
 
-./gradlew bootBuildImage --imageName=springio/gs-spring-boot-docker:v2
+./gradlew bootBuildImage --imageName=springio/gs-spring-boot-docker:${TAG_NAME}
 
 
 ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=springio/gs-spring-boot-docker:${TAG_NAME}
