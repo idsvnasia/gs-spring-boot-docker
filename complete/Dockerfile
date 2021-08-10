@@ -6,7 +6,7 @@ COPY mvnw   ./mvnw.sh
 
 RUN chmod  +x  ./mvnw.sh
 
-RUN ./mvnw  package
+RUN ./mvnw.sh  package
 
 COPY target/*.jar    app/app.jar 
 EXPOSE 8080/tcp
