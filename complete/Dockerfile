@@ -1,14 +1,10 @@
-FROM openjdk:11-jdk-slim
+FROM openjdk:18-jdk-slim
 
 WORKDIR  /app
 
-COPY mvnw   ./mvnw.sh
+CMD ["./mvnw",  "package"]
 
-RUN chmod  +x  ./mvnw.sh
-
-RUN ./mvnw.sh  package
-
-COPY target/*.jar    app/app.jar 
+COPY target/*.jar    app/app.jar
 EXPOSE 8080/tcp
 
 CMD ["java","-jar","app/app.jar"]
