@@ -10,13 +10,13 @@ TAG_NAME=v$BUILD_NUMBER
 
 ./mvnw package
 
-java -jar   app.jar
+java -jar   app/app.jar
 
-ls -la target
+ls -la ./target
 
 docker build -t springio/gs-spring-boot-docker:$TAG_NAME  .
 
 docker run -e "SPRING_PROFILES_ACTIVE=dev" -p 8080:8080 -t springio/gs-spring-boot-docker:$TAG_NAME
 
 
-docker run -p 8074:8074 -t springio/gs-spring-boot-docker:${TAG_NAME}
+docker run -p 8080:8080 -t springio/gs-spring-boot-docker:${TAG_NAME}
