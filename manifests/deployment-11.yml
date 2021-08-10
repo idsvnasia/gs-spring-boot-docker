@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "javaspringboot-53c4"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "javaspringboot-53c4"
+  template:
+    metadata:
+      labels:
+        app: "javaspringboot-53c4"
+    spec:
+      containers:
+        - name: "javaspringboot-53c4"
+          image: "idsvnasiaacr.azurecr.io/javaspringboot"
+          ports:
+          - containerPort: 8080
