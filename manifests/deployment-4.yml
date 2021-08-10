@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "javaspringboot-6b2d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "javaspringboot-6b2d"
+  template:
+    metadata:
+      labels:
+        app: "javaspringboot-6b2d"
+    spec:
+      containers:
+        - name: "javaspringboot-6b2d"
+          image: "idsvnasiaacr.azurecr.io/javaspringboot"
+          ports:
+          - containerPort: 8080
