@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "javaspringboot-471e"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "javaspringboot-471e"
+  template:
+    metadata:
+      labels:
+        app: "javaspringboot-471e"
+    spec:
+      containers:
+        - name: "javaspringboot-471e"
+          image: "idsvnasiaacr.azurecr.io/javaspringboot"
+          ports:
+          - containerPort: 8080
