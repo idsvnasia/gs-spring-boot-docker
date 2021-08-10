@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "javaspringboot-e9fc"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "javaspringboot-e9fc"
+  template:
+    metadata:
+      labels:
+        app: "javaspringboot-e9fc"
+    spec:
+      containers:
+        - name: "javaspringboot-e9fc"
+          image: "idsvnasiaacr.azurecr.io/javaspringboot"
+          ports:
+          - containerPort: 8080
