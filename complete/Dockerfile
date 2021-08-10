@@ -1,7 +1,10 @@
 FROM openjdk:11-jdk-slim
 
-RUN mkdir  /app
 WORKDIR  /app
+
+COPY mvnw   ./mvnw.sh
+
+RUN chmod  +x  ./mvnw.sh
 
 RUN ./mvnw  package
 
