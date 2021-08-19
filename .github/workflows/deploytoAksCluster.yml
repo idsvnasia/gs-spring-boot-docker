@@ -44,8 +44,8 @@ jobs:
       with:
         namespace: java-spring-boot8c1c
         manifests: |
-          manifests/deployment-15.yml
-          manifests/service-15.yml
+          manifests/deployment.yml
+          manifests/service.yml
         images: |
           idsvnacr.azurecr.io/javaspringboot:${{ github.sha }}
         imagepullsecrets: |
