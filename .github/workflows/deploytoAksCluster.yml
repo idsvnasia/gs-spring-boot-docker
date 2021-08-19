@@ -16,6 +16,7 @@ jobs:
       run: |
         cd complete
         ./mvnw  package
+        cd .. 
         docker build "$GITHUB_WORKSPACE/complete" -f  "complete/Dockerfile" -t idsvnacr.azurecr.io/javaspringboot:${{ github.sha }} --label dockerfile-path=complete/Dockerfile
         docker push idsvnacr.azurecr.io/javaspringboot:${{ github.sha }}
     
