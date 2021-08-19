@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: "javaspringboot-4d97"
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: "javaspringboot-4d97"
@@ -16,4 +16,4 @@ spec:
         - name: "javaspringboot-4d97"
           image: "idsvnasiaacr.azurecr.io/javaspringboot"
           ports:
-          - containerPort: 80
+          - containerPort: 8080
