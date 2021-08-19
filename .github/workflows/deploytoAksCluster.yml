@@ -14,7 +14,8 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        complete/mvnw  package
+        cd complete
+        ./mvnw  package
         docker build "$GITHUB_WORKSPACE/complete" -f  "complete/Dockerfile" -t idsvnacr.azurecr.io/javaspringboot:${{ github.sha }} --label dockerfile-path=complete/Dockerfile
         docker push idsvnacr.azurecr.io/javaspringboot:${{ github.sha }}
     
