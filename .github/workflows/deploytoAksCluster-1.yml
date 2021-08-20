@@ -14,7 +14,9 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/complete" -f  "complete/Dockerfile" -t idsvnacr.azurecr.io/javaspringboot:${{ github.sha }} --label dockerfile-path=complete/Dockerfile
+        cd complete
+        ./mvnw  package
+        docker build "$GITHUB_WORKSPACE/complete" -f  "Dockerfile" -t idsvnacr.azurecr.io/javaspringboot:${{ github.sha }} --label dockerfile-path=complete/Dockerfile
         docker push idsvnacr.azurecr.io/javaspringboot:${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
