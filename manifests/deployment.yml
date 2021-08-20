@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: "javaspringboot-fa4a"
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: "javaspringboot-fa4a"
