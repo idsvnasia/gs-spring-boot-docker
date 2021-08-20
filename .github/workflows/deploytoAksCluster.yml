@@ -26,15 +26,15 @@ jobs:
     
     - name: Create namespace
       run: |
-        namespacePresent=`kubectl get namespace | grep java-spring-boot8c1c | wc -l`
+        namespacePresent=`kubectl get namespace | grep java-spring-v1 | wc -l`
         if [ $namespacePresent -eq 0 ]
         then
-            echo `kubectl create namespace java-spring-boot8c1c`
+            echo `kubectl create namespace java-spring-v1`
         fi
 
     - uses: azure/k8s-create-secret@v1
       with:
-        namespace: java-spring-boot8c1c
+        namespace: java-spring-v1
         container-registry-url: idsvnacr.azurecr.io
         container-registry-username: ${{ secrets.acr_idsvnacr_username }}
         container-registry-password: ${{ secrets.acr_idsvnacr_password }}
@@ -42,7 +42,7 @@ jobs:
        
     - uses: azure/k8s-deploy@v1.2
       with:
-        namespace: java-spring-boot8c1c
+        namespace: java-spring-v1
         manifests: |
           manifests/deployment.yml
           manifests/service.yml
