@@ -14,7 +14,7 @@ variables:
   dockerRegistryServiceConnection: '2ff3e911-040f-4885-9542-cf79a70c7309'
   imageRepository: 'idsvnasiagsspringbootdocker'
   containerRegistry: 'idsvnasiaacr.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
+  dockerfilePath: 'complete/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'idsvnasiaacr1a74-auth'
 
