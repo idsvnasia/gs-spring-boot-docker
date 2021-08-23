@@ -53,7 +53,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'idsvnasiagsspringbootdocker.default'
+    environment: 'idsvnasiagsspringbootdocker.java-spring-boot-v1'
     strategy:
       runOnce:
         deploy:
